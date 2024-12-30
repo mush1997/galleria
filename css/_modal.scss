@@ -1,0 +1,79 @@
+@keyframes gallery {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shadow {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+body.shadow {
+
+    &::before {
+        display: block;
+        animation: shadow 0.4s forwards;
+    }
+}
+
+body {
+    main {
+        #modal {
+            width: 80%;
+            max-width: 900px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 15;
+            display: none;
+
+            div {
+                padding: 40px 0;
+
+                p {
+                    margin-bottom: 40px;
+                    width: 100%;
+                    text-align: right;
+                    font-size: 14px;
+                    color: $white;
+                    letter-spacing: 3px;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $dark_gray;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        #modal.show {
+            display: block;
+            animation: gallery 0.8s forwards;
+        }
+    }
+}
+
+@media screen and (max-width:1000px){
+    body{
+        main{
+            #modal{
+                width: 85%;                
+            }
+        }
+    }
+}

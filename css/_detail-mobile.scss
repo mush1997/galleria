@@ -1,0 +1,153 @@
+/* tablet */
+@media screen and (max-width:1000px) {
+    body {
+        padding: 0;
+
+        main {
+            padding: 60px 40px 0 40px;
+        }
+
+        .control {
+            padding: 0 40px;
+        }
+    }
+}
+
+@media screen and (max-width:900px) {
+    body {
+        main {
+            .container {
+                .pics {
+                    .title {
+                        padding: 0 0 40px 40px;
+
+                        h1 {
+                            width: 90%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:660px) {
+    body {
+        main {
+            .container {
+                .pics {
+                    .painting {
+                        img {
+                            width: 100%;
+                        }
+
+                        p {
+                            top: 16px;
+                            bottom: auto;
+                        }
+                    }
+
+                    .title {
+                        padding: 24px;
+                        width: 85%;
+                        top: auto;
+                        bottom: -10px;
+                        left: 0;
+                        right: auto;
+
+                        h1 {
+                            margin-bottom: 8px;
+                            width: 100%;
+                            font-size: 24px;
+                            line-height: 29px;
+                        }
+                    }
+
+                    .artist {
+                        left: 16px;
+                        top: calc(100% + 30px);
+                    }
+                }
+
+                .text {
+                    margin-top: 180px;
+
+                    .year {
+                        font-size: 150px;
+                        line-height: 120px;
+                        letter-spacing: 6px;
+                        left: auto;
+                        right: 0;
+                    }
+
+                    .description {
+                        margin: 50px auto 40px auto;
+                        width: 80%;
+                    }
+
+                    a {
+                        margin-left: 10%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* phone */
+@media screen and (max-width:560px) {
+    body {
+        main {
+            padding: 40px 24px 0 24px;
+
+            .container {
+                .pics {
+                    .artist {
+                        img {
+                            width: 85%;
+                        }
+                    }
+                }
+
+                .text {
+                    .year {
+                        font-size: 120px;
+                        line-height: 100px;
+                        top: -30px;
+                    }
+
+                    .description {
+                        margin: 40px auto 40px auto;
+                        width: 94%;
+                    }
+
+                    a {
+                        margin-left: 3%;
+                    }
+                }
+            }
+        }
+
+        .control {
+            margin-top: 60px;
+            padding: 0 24px;
+
+            .wrapper {
+                .smallTitle {
+                    margin-right: 16px;
+                }
+
+                .panel {
+                    img {
+                        width: 16px;
+                        height: 16px;
+                    }
+
+                    #prevBtn {
+                        margin-right: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

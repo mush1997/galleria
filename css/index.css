@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Libre Baskerville";
+  font-weight: bold;
+  color: black;
+}
+
+body header {
+  padding: 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header img {
+  flex-basis: 20%;
+  max-width: 170px;
+}
+body header a {
+  display: block;
+  font-family: serif;
+  font-size: 12px;
+  color: #7D7D7D;
+  line-height: 15px;
+  letter-spacing: 2.5px;
+  text-align: right;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+body header a:hover {
+  cursor: pointer;
+  color: black;
+}
+
+@media screen and (max-width: 1000px) {
+  body header {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 780px) {
+  body header img {
+    max-width: 140px;
+  }
+}
+@media screen and (max-width: 560px) {
+  body header img {
+    max-width: 120px;
+  }
+}
+@media screen and (max-width: 460px) {
+  body header {
+    padding: 24px;
+  }
+  body header img {
+    margin-right: 20px;
+    max-width: 100px;
+  }
+}
+body footer .attribution {
+  padding: 0 6px 16px 6px;
+  width: 100%;
+  font-size: 9px;
+  color: #7D7D7D;
+  text-align: center;
+}
+body footer .attribution a {
+  font-size: 9px;
+  color: #7D7D7D;
+}
+
+body {
+  padding: 0 40px;
+}
+body main {
+  margin-bottom: 40px;
+  width: 100%;
+  border-top: 2px solid #F3F3F3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  position: relative;
+}
+body main .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body main .pItem {
+  margin-top: 40px;
+  width: 100%;
+  position: relative;
+}
+body main .pItem:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+body main .pItem img {
+  width: 100%;
+  display: block;
+}
+body main .pItem div {
+  padding: 40px;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.84) 100%);
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+}
+body main .pItem div .pName {
+  margin-bottom: 6px;
+  font-size: 24px;
+  color: white;
+  line-height: 29px;
+}
+body main .pItem div .pAuthor {
+  font-size: 13px;
+  font-weight: normal;
+  color: white;
+  line-height: 17px;
+}
+
+@media screen and (max-width: 1260px) {
+  body main {
+    padding-top: 10px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+  body main .pItem {
+    margin-top: 30px;
+  }
+  body main .pItem div {
+    padding: 24px;
+  }
+  body main .pItem div .pName {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+/* tablet */
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 0;
+  }
+  body main {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 12px 40px 0 40px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  body main .pItem {
+    margin-top: 40px;
+    padding: 0 12px;
+  }
+  body main .pItem div {
+    width: calc(100% - 24px);
+  }
+  body main #p14 {
+    order: 1;
+  }
+}
+@media screen and (max-width: 780px) {
+  body main {
+    padding-top: 0;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+  }
+  body main .pItem {
+    padding: 0;
+  }
+  body main .pItem div {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 680px) {
+  body main {
+    margin-bottom: 30px;
+    padding: 0 30px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+  body main .pItem {
+    margin-top: 30px;
+  }
+}
+/* phone */
+@media screen and (max-width: 500px) {
+  body main {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  body main .pItem {
+    margin-top: 40px;
+    padding: 0 16px;
+  }
+  body main .pItem div {
+    width: calc(100% - 32px);
+  }
+  body main #p14 {
+    order: 0;
+  }
+}
+@media screen and (max-width: 460px) {
+  body main .pItem {
+    padding: 0 10px;
+  }
+  body main .pItem div {
+    width: calc(100% - 20px);
+  }
+}
+@media screen and (max-width: 380px) {
+  body main {
+    margin-bottom: 24px;
+  }
+  body main .pItem {
+    margin-top: 24px;
+    padding: 0;
+  }
+  body main .pItem div {
+    width: 100%;
+  }
+}/*# sourceMappingURL=index.css.map */

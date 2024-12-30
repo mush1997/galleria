@@ -1,0 +1,112 @@
+/* tablet */
+@media screen and (max-width:1000px) {
+    body {
+        padding: 0;
+
+        main {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 12px 40px 0 40px;
+            column-gap: 20px;
+
+            .pItem {
+                margin-top: 40px;
+                padding: 0 12px;
+
+                div {
+                    width: calc(100% - 24px);
+                }
+            }
+
+            #p14 {
+                order: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:780px) {
+    body {
+        main {
+            padding-top: 0;
+            column-gap: 40px;
+
+            .pItem {
+                padding: 0;
+
+                div {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:680px) {
+    body {
+        main {
+            margin-bottom: 30px;
+            padding: 0 30px;
+            column-gap: 30px;
+
+            .pItem {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+/* phone */
+@media screen and (max-width:500px) {
+    body {
+        main {
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+
+            .pItem {
+                margin-top: 40px;
+                padding: 0 16px;
+
+                div {
+                    width: calc(100% - 32px);
+                }
+            }
+
+            #p14 {
+                order: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:460px) {
+    body {
+        main {
+            .pItem {
+                padding: 0 10px;
+
+                div {
+                    width: calc(100% - 20px);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:380px) {
+    body {
+        main {
+            margin-bottom: 24px;
+            .pItem {
+                margin-top: 24px;
+                padding: 0;
+
+                div {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

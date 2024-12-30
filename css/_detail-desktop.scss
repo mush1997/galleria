@@ -1,0 +1,265 @@
+@import "header";
+@import "modal";
+
+body {
+    padding: 0 40px;
+
+    &::before {
+        content: "";
+        width: 100%;
+        background-color: black;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+        display: none;
+    }
+
+    main {
+        padding-top: 100px;
+        border-top: 2px solid $light_gray;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+
+            .pics {
+                flex-basis: 60%;
+                position: relative;
+
+                .painting {
+                    position: relative;
+
+                    img {
+                        width: 63%;
+                        vertical-align: middle;
+                    }
+
+                    p {
+                        background-color: rgba(0, 0, 0, 0.6);
+                        padding: 10px 12px;
+                        position: absolute;
+                        left: 16px;
+                        bottom: 16px;
+
+                        img {
+                            margin-right: 8px;
+                            width: 12px;
+                            height: 12px;
+                            vertical-align: middle;
+                        }
+
+                        span {
+                            font-size: 10px;
+                            color: $white;
+                            letter-spacing: 2px;
+                            text-transform: uppercase;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: rgba(255, 255, 255, 0.4);
+                        }
+                    }
+                }
+
+                .title {
+                    padding: 0 10px 60px 60px;
+                    width: calc(40% + 60px);
+                    background-color: $white;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+
+                    h1 {
+                        margin-bottom: 24px;
+                        font-size: 56px;
+                        line-height: 64px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                        font-weight: normal;
+                        color: $dark_gray;
+                        line-height: 19px;
+                    }
+                }
+
+                .artist {
+                    position: absolute;
+                    left: calc(63% + 30px);
+                    bottom: -60px;
+
+                    img {
+                        vertical-align: bottom;
+                    }
+                }
+            }
+
+            .text {
+                flex-basis: 38%;
+                position: relative;
+
+                .year {
+                    font-size: 200px;
+                    color: $light_gray;
+                    line-height: 150px;
+                    position: absolute;
+                    top: 30px;
+                    left: 10px;
+                    z-index: -1;
+                }
+
+                .description {
+                    margin: 150px 0 40px 30px;
+                    width: 70%;
+                    min-height: 400px;
+                    font-size: 15px;
+                    color: $dark_gray;
+                    line-height: 30px;
+                }
+
+                a {
+                    margin-left: 30px;
+                    font-size: 10px;
+                    color: $dark_gray;
+                    line-height: 12px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+
+    .control {
+        margin-top: 90px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            border: 1px solid $light_gray;
+        }
+
+        .progressBar {
+            content: "";
+            width: calc(100% / 15);
+            position: absolute;
+            left: 0;
+            border: 1px solid $black;
+        }
+
+        .wrapper {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .smallTitle {
+                h2 {
+                    margin-bottom: 8px;
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+
+                p {
+                    font-size: 13px;
+                    font-weight: normal;
+                    color: $black;
+                    line-height: 17px;
+                }
+            }
+
+            .panel {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover {
+                        cursor: pointer;
+                        filter: invert(84%) sepia(0%) saturate(204%) hue-rotate(135deg) brightness(91%) contrast(82%);
+                    }
+                }
+
+                img.unclickable {
+                    filter: invert(100%) sepia(3%) saturate(762%) hue-rotate(246deg) brightness(115%) contrast(91%);
+
+                    &:hover {
+                        cursor: not-allowed;
+                    }
+                }
+
+                #prevBtn {
+                    margin-right: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    body {
+        main {
+            padding-top: 60px;
+
+            .container {
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .pics {
+                    flex-basis: 100%;
+
+                    .painting {
+                        img {
+                            width: 68%;
+                        }
+                    }
+
+                    .title {
+                        padding: 0 0 60px 60px;
+                        width: 66%;
+
+                        h1 {
+                            width: 80%;
+                        }
+                    }
+
+                    .artist {
+                        left: calc(68% + 30px);
+                        bottom: 0;
+                    }
+                }
+
+                .text {
+                    margin-top: 90px;
+                    flex-basis: 100%;
+
+                    .year {
+                        top: -20px;
+                        left: 20px;
+                    }
+
+                    .description {
+                        margin: 70px auto 40px auto;
+                        width: 60%;
+                        min-height: auto;
+                    }
+
+                    a {
+                        margin-left: 20%;
+                    }
+                }
+            }
+        }
+    }
+}

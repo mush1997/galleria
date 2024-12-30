@@ -1,0 +1,432 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Libre Baskerville";
+  font-weight: bold;
+  color: black;
+}
+
+body header {
+  padding: 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header img {
+  flex-basis: 20%;
+  max-width: 170px;
+}
+body header a {
+  display: block;
+  font-family: serif;
+  font-size: 12px;
+  color: #7D7D7D;
+  line-height: 15px;
+  letter-spacing: 2.5px;
+  text-align: right;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+body header a:hover {
+  cursor: pointer;
+  color: black;
+}
+
+@media screen and (max-width: 1000px) {
+  body header {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 780px) {
+  body header img {
+    max-width: 140px;
+  }
+}
+@media screen and (max-width: 560px) {
+  body header img {
+    max-width: 120px;
+  }
+}
+@media screen and (max-width: 460px) {
+  body header {
+    padding: 24px;
+  }
+  body header img {
+    margin-right: 20px;
+    max-width: 100px;
+  }
+}
+@keyframes gallery {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes shadow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+body.shadow::before {
+  display: block;
+  animation: shadow 0.4s forwards;
+}
+
+body main #modal {
+  width: 80%;
+  max-width: 900px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  display: none;
+}
+body main #modal div {
+  padding: 40px 0;
+}
+body main #modal div p {
+  margin-bottom: 40px;
+  width: 100%;
+  text-align: right;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+body main #modal div p:hover {
+  cursor: pointer;
+  color: #7D7D7D;
+}
+body main #modal div img {
+  width: 100%;
+}
+body main #modal.show {
+  display: block;
+  animation: gallery 0.8s forwards;
+}
+
+@media screen and (max-width: 1000px) {
+  body main #modal {
+    width: 85%;
+  }
+}
+body {
+  padding: 0 40px;
+}
+body::before {
+  content: "";
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  display: none;
+}
+body main {
+  padding-top: 100px;
+  border-top: 2px solid #F3F3F3;
+}
+body main .container {
+  display: flex;
+  justify-content: space-between;
+}
+body main .container .pics {
+  flex-basis: 60%;
+  position: relative;
+}
+body main .container .pics .painting {
+  position: relative;
+}
+body main .container .pics .painting img {
+  width: 63%;
+  vertical-align: middle;
+}
+body main .container .pics .painting p {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 12px;
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+}
+body main .container .pics .painting p img {
+  margin-right: 8px;
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+}
+body main .container .pics .painting p span {
+  font-size: 10px;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+body main .container .pics .painting p:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+body main .container .pics .title {
+  padding: 0 10px 60px 60px;
+  width: calc(40% + 60px);
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+body main .container .pics .title h1 {
+  margin-bottom: 24px;
+  font-size: 56px;
+  line-height: 64px;
+}
+body main .container .pics .title p {
+  font-size: 15px;
+  font-weight: normal;
+  color: #7D7D7D;
+  line-height: 19px;
+}
+body main .container .pics .artist {
+  position: absolute;
+  left: calc(63% + 30px);
+  bottom: -60px;
+}
+body main .container .pics .artist img {
+  vertical-align: bottom;
+}
+body main .container .text {
+  flex-basis: 38%;
+  position: relative;
+}
+body main .container .text .year {
+  font-size: 200px;
+  color: #F3F3F3;
+  line-height: 150px;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  z-index: -1;
+}
+body main .container .text .description {
+  margin: 150px 0 40px 30px;
+  width: 70%;
+  min-height: 400px;
+  font-size: 15px;
+  color: #7D7D7D;
+  line-height: 30px;
+}
+body main .container .text a {
+  margin-left: 30px;
+  font-size: 10px;
+  color: #7D7D7D;
+  line-height: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+body main .container .text a:hover {
+  cursor: pointer;
+  color: black;
+}
+body .control {
+  margin-top: 90px;
+}
+body .control::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 1px solid #F3F3F3;
+}
+body .control .progressBar {
+  content: "";
+  width: 6.6666666667%;
+  position: absolute;
+  left: 0;
+  border: 1px solid black;
+}
+body .control .wrapper {
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .control .wrapper .smallTitle h2 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 22px;
+}
+body .control .wrapper .smallTitle p {
+  font-size: 13px;
+  font-weight: normal;
+  color: black;
+  line-height: 17px;
+}
+body .control .wrapper .panel {
+  display: flex;
+  align-items: center;
+}
+body .control .wrapper .panel img {
+  width: 24px;
+  height: 24px;
+}
+body .control .wrapper .panel img:hover {
+  cursor: pointer;
+  filter: invert(84%) sepia(0%) saturate(204%) hue-rotate(135deg) brightness(91%) contrast(82%);
+}
+body .control .wrapper .panel img.unclickable {
+  filter: invert(100%) sepia(3%) saturate(762%) hue-rotate(246deg) brightness(115%) contrast(91%);
+}
+body .control .wrapper .panel img.unclickable:hover {
+  cursor: not-allowed;
+}
+body .control .wrapper .panel #prevBtn {
+  margin-right: 24px;
+}
+
+@media screen and (max-width: 1200px) {
+  body main {
+    padding-top: 60px;
+  }
+  body main .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  body main .container .pics {
+    flex-basis: 100%;
+  }
+  body main .container .pics .painting img {
+    width: 68%;
+  }
+  body main .container .pics .title {
+    padding: 0 0 60px 60px;
+    width: 66%;
+  }
+  body main .container .pics .title h1 {
+    width: 80%;
+  }
+  body main .container .pics .artist {
+    left: calc(68% + 30px);
+    bottom: 0;
+  }
+  body main .container .text {
+    margin-top: 90px;
+    flex-basis: 100%;
+  }
+  body main .container .text .year {
+    top: -20px;
+    left: 20px;
+  }
+  body main .container .text .description {
+    margin: 70px auto 40px auto;
+    width: 60%;
+    min-height: auto;
+  }
+  body main .container .text a {
+    margin-left: 20%;
+  }
+}
+/* tablet */
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 0;
+  }
+  body main {
+    padding: 60px 40px 0 40px;
+  }
+  body .control {
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 900px) {
+  body main .container .pics .title {
+    padding: 0 0 40px 40px;
+  }
+  body main .container .pics .title h1 {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 660px) {
+  body main .container .pics .painting img {
+    width: 100%;
+  }
+  body main .container .pics .painting p {
+    top: 16px;
+    bottom: auto;
+  }
+  body main .container .pics .title {
+    padding: 24px;
+    width: 85%;
+    top: auto;
+    bottom: -10px;
+    left: 0;
+    right: auto;
+  }
+  body main .container .pics .title h1 {
+    margin-bottom: 8px;
+    width: 100%;
+    font-size: 24px;
+    line-height: 29px;
+  }
+  body main .container .pics .artist {
+    left: 16px;
+    top: calc(100% + 30px);
+  }
+  body main .container .text {
+    margin-top: 180px;
+  }
+  body main .container .text .year {
+    font-size: 150px;
+    line-height: 120px;
+    letter-spacing: 6px;
+    left: auto;
+    right: 0;
+  }
+  body main .container .text .description {
+    margin: 50px auto 40px auto;
+    width: 80%;
+  }
+  body main .container .text a {
+    margin-left: 10%;
+  }
+}
+/* phone */
+@media screen and (max-width: 560px) {
+  body main {
+    padding: 40px 24px 0 24px;
+  }
+  body main .container .pics .artist img {
+    width: 85%;
+  }
+  body main .container .text .year {
+    font-size: 120px;
+    line-height: 100px;
+    top: -30px;
+  }
+  body main .container .text .description {
+    margin: 40px auto 40px auto;
+    width: 94%;
+  }
+  body main .container .text a {
+    margin-left: 3%;
+  }
+  body .control {
+    margin-top: 60px;
+    padding: 0 24px;
+  }
+  body .control .wrapper .smallTitle {
+    margin-right: 16px;
+  }
+  body .control .wrapper .panel img {
+    width: 16px;
+    height: 16px;
+  }
+  body .control .wrapper .panel #prevBtn {
+    margin-right: 16px;
+  }
+}/*# sourceMappingURL=detail.css.map */

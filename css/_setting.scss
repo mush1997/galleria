@@ -1,0 +1,14 @@
+$black: black;
+$white: white;
+$dark_gray: #7D7D7D;
+$medium_gray: #E5E5E5;
+$light_gray: #F3F3F3;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Libre Baskerville";
+    font-weight: bold;
+    color: $black;
+}
