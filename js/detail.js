@@ -13,8 +13,14 @@ const nextBtn = document.getElementById("nextBtn");
 (async function () {
   await fetch("data.json").then(response => response.json()).then(data => paintingData = data);
   index = paintingData.findIndex((data) => data.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "") === painting);
-  currentPainting = paintingData[index];
-  setHeroPicSize();
+
+  if (index < 0) {
+    window.location.href = "./index.html";
+  } else {
+    currentPainting = paintingData[index];
+    setHeroPicSize();
+  }
+
   window.addEventListener("resize", setHeroPicSize);
 })();
 
@@ -92,6 +98,7 @@ function switchPainting(event) {
   direction === "prev" ? currentPainting = paintingData[index - 1] : currentPainting = paintingData[index + 1];
   direction === "prev" ? index-- : index++;
   renderDetail(currentPainting, heroPicSize);
+  window.scrollTo(0, 0);
   window.history.replaceState(null, "", `./detail.html?painting=${painting}`);
 }
 
