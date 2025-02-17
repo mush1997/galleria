@@ -21,6 +21,10 @@
                 order: 1;
             }
         }
+
+        &>p {
+            padding-right: 52px;
+        }
     }
 }
 
@@ -38,19 +42,27 @@
                 }
             }
         }
+
+        &>p {
+            padding-right: 40px;
+        }
     }
 }
 
 @media screen and (max-width:680px) {
     body {
         main {
-            margin-bottom: 30px;
             padding: 0 30px;
             column-gap: 30px;
 
             .pItem {
                 margin-top: 30px;
             }
+        }
+
+        &>p {
+            margin-top: 10px;
+            padding-right: 30px;
         }
     }
 }
@@ -59,7 +71,6 @@
 @media screen and (max-width:500px) {
     body {
         main {
-            margin-bottom: 40px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -78,6 +89,10 @@
                 order: 0;
             }
         }
+
+        &>p {
+            padding-right: 46px;
+        }
     }
 }
 
@@ -92,13 +107,16 @@
                 }
             }
         }
+
+        &>p {
+            padding-right: 40px;
+        }
     }
 }
 
 @media screen and (max-width:380px) {
     body {
         main {
-            margin-bottom: 24px;
             .pItem {
                 margin-top: 24px;
                 padding: 0;
@@ -107,6 +125,10 @@
                     width: 100%;
                 }
             }
+        }
+
+        &>p {
+            padding-right: 30px;
         }
     }
 }

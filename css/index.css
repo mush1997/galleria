@@ -75,7 +75,6 @@ body {
   padding: 0 40px;
 }
 body main {
-  margin-bottom: 40px;
   width: 100%;
   border-top: 2px solid #F3F3F3;
   display: grid;
@@ -122,6 +121,21 @@ body main .pItem div .pAuthor {
   color: white;
   line-height: 17px;
 }
+body > p {
+  margin: 16px 0 24px 0;
+  width: 100%;
+  text-align: right;
+}
+body > p a {
+  font-family: serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #7D7D7D;
+}
+body > p a:hover {
+  cursor: pointer;
+  color: black;
+}
 
 @media screen and (max-width: 1260px) {
   body main {
@@ -161,6 +175,9 @@ body main .pItem div .pAuthor {
   body main #p14 {
     order: 1;
   }
+  body > p {
+    padding-right: 52px;
+  }
 }
 @media screen and (max-width: 780px) {
   body main {
@@ -174,10 +191,12 @@ body main .pItem div .pAuthor {
   body main .pItem div {
     width: 100%;
   }
+  body > p {
+    padding-right: 40px;
+  }
 }
 @media screen and (max-width: 680px) {
   body main {
-    margin-bottom: 30px;
     padding: 0 30px;
     -moz-column-gap: 30px;
          column-gap: 30px;
@@ -185,11 +204,14 @@ body main .pItem div .pAuthor {
   body main .pItem {
     margin-top: 30px;
   }
+  body > p {
+    margin-top: 10px;
+    padding-right: 30px;
+  }
 }
 /* phone */
 @media screen and (max-width: 500px) {
   body main {
-    margin-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -205,6 +227,9 @@ body main .pItem div .pAuthor {
   body main #p14 {
     order: 0;
   }
+  body > p {
+    padding-right: 46px;
+  }
 }
 @media screen and (max-width: 460px) {
   body main .pItem {
@@ -213,16 +238,19 @@ body main .pItem div .pAuthor {
   body main .pItem div {
     width: calc(100% - 20px);
   }
+  body > p {
+    padding-right: 40px;
+  }
 }
 @media screen and (max-width: 380px) {
-  body main {
-    margin-bottom: 24px;
-  }
   body main .pItem {
     margin-top: 24px;
     padding: 0;
   }
   body main .pItem div {
     width: 100%;
+  }
+  body > p {
+    padding-right: 30px;
   }
 }/*# sourceMappingURL=index.css.map */

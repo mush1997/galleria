@@ -5,7 +5,6 @@ body {
     padding: 0 40px;
 
     main {
-        margin-bottom: 40px;
         width: 100%;
         border-top: 2px solid $light_gray;
 
@@ -56,6 +55,24 @@ body {
                     color: $white;
                     line-height: 17px;
                 }
+            }
+        }
+    }
+
+    &>p {
+        margin: 16px 0 24px 0;
+        width: 100%;
+        text-align: right;
+
+        a {
+            font-family: serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: $dark_gray;
+
+            &:hover {
+                cursor: pointer;
+                color: $black;
             }
         }
     }
