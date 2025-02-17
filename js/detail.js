@@ -18,7 +18,7 @@ const nextBtn = document.getElementById("nextBtn");
     window.location.href = "./index.html";
   } else {
     currentPainting = paintingData[index];
-    setHeroPicSize();
+    window.addEventListener("load", () => { setHeroPicSize(); }, { once: true });
   }
 
   window.addEventListener("resize", setHeroPicSize);
