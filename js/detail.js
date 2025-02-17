@@ -22,6 +22,7 @@ const nextBtn = document.getElementById("nextBtn");
   }
 
   window.addEventListener("resize", setHeroPicSize);
+  document.querySelector("header img").addEventListener("click", () => { window.location.href = "./index.html" });
 })();
 
 function setHeroPicSize() {

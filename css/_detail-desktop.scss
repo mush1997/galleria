@@ -16,6 +16,12 @@ body {
         display: none;
     }
 
+    header img {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     main {
         padding-top: 100px;
         border-top: 2px solid $light_gray;
