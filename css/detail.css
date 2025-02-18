@@ -9,6 +9,7 @@
 }
 
 body header {
+  border: 1px solid red;
   padding: 40px 0;
   width: 100%;
   display: flex;
@@ -30,11 +31,13 @@ body header a {
   text-transform: uppercase;
   text-decoration: none;
 }
-body header a:hover {
-  cursor: pointer;
-  color: black;
-}
 
+@media screen and (hover: hover) {
+  body header a:hover {
+    cursor: pointer;
+    color: black;
+  }
+}
 @media screen and (max-width: 1000px) {
   body header {
     padding: 40px;
@@ -101,10 +104,6 @@ body main #modal div p {
   letter-spacing: 3px;
   text-transform: uppercase;
 }
-body main #modal div p:hover {
-  cursor: pointer;
-  color: #7D7D7D;
-}
 body main #modal div img {
   width: 100%;
 }
@@ -113,6 +112,12 @@ body main #modal.show {
   animation: gallery 0.8s forwards;
 }
 
+@media screen and (hover: hover) {
+  body main #modal div p:hover {
+    cursor: pointer;
+    color: #7D7D7D;
+  }
+}
 @media screen and (max-width: 1000px) {
   body main #modal {
     width: 85%;
@@ -131,9 +136,6 @@ body::before {
   bottom: 0;
   z-index: 10;
   display: none;
-}
-body header img:hover {
-  cursor: pointer;
 }
 body main {
   padding-top: 100px;
@@ -172,10 +174,6 @@ body main .container .pics .painting p span {
   color: white;
   letter-spacing: 2px;
   text-transform: uppercase;
-}
-body main .container .pics .painting p:hover {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.4);
 }
 body main .container .pics .title {
   padding: 0 10px 60px 60px;
@@ -233,10 +231,6 @@ body main .container .text a {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-body main .container .text a:hover {
-  cursor: pointer;
-  color: black;
-}
 body .control {
   margin-top: 90px;
 }
@@ -279,20 +273,33 @@ body .control .wrapper .panel img {
   width: 24px;
   height: 24px;
 }
-body .control .wrapper .panel img:hover {
-  cursor: pointer;
-  filter: invert(84%) sepia(0%) saturate(204%) hue-rotate(135deg) brightness(91%) contrast(82%);
-}
 body .control .wrapper .panel img.unclickable {
   filter: invert(100%) sepia(3%) saturate(762%) hue-rotate(246deg) brightness(115%) contrast(91%);
-}
-body .control .wrapper .panel img.unclickable:hover {
-  cursor: not-allowed;
 }
 body .control .wrapper .panel #prevBtn {
   margin-right: 24px;
 }
 
+@media screen and (hover: hover) {
+  body header img:hover {
+    cursor: pointer;
+  }
+  body main .container .pics .painting p:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  body main .container .text a:hover {
+    cursor: pointer;
+    color: black;
+  }
+  body .control .wrapper .panel img:hover {
+    cursor: pointer;
+    filter: invert(84%) sepia(0%) saturate(204%) hue-rotate(135deg) brightness(91%) contrast(82%);
+  }
+  body .control .wrapper .panel img.unclickable:hover {
+    cursor: not-allowed;
+  }
+}
 @media screen and (max-width: 1200px) {
   body main {
     padding-top: 60px;

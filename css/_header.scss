@@ -2,6 +2,7 @@
 
 body {
     header {
+        border: 1px solid red;
         padding: 40px 0;
         width: 100%;
         display: flex;
@@ -13,7 +14,7 @@ body {
             max-width: 170px;
         }
 
-        a {           
+        a {
             display: block;
             font-family: serif;
             font-size: 12px;
@@ -24,11 +25,18 @@ body {
             text-transform: uppercase;
             text-decoration: none;
 
-            &:hover {
-                cursor: pointer;
-                color: $black;
-            }
+            // &:hover {
+            //     cursor: pointer;
+            //     color: $black;
+            // }
         }
+    }
+}
+
+@media screen and (hover:hover) {
+    body header a:hover {
+        cursor: pointer;
+        color: $black;
     }
 }
 

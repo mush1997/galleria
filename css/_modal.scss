@@ -49,10 +49,10 @@ body {
                     letter-spacing: 3px;
                     text-transform: uppercase;
 
-                    &:hover {
-                        cursor: pointer;
-                        color: $dark_gray;
-                    }
+                    // &:hover {
+                    //     cursor: pointer;
+                    //     color: $dark_gray;
+                    // }
                 }
 
                 img {
@@ -65,6 +65,13 @@ body {
             display: block;
             animation: gallery 0.8s forwards;
         }
+    }
+}
+
+@media screen and (hover:hover) {
+    body main #modal div p:hover {
+        cursor: pointer;
+        color: $dark_gray;
     }
 }
 

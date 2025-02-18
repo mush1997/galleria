@@ -9,6 +9,7 @@
 }
 
 body header {
+  border: 1px solid red;
   padding: 40px 0;
   width: 100%;
   display: flex;
@@ -30,11 +31,13 @@ body header a {
   text-transform: uppercase;
   text-decoration: none;
 }
-body header a:hover {
-  cursor: pointer;
-  color: black;
-}
 
+@media screen and (hover: hover) {
+  body header a:hover {
+    cursor: pointer;
+    color: black;
+  }
+}
 @media screen and (max-width: 1000px) {
   body header {
     padding: 40px;
@@ -93,10 +96,6 @@ body main .pItem {
   width: 100%;
   position: relative;
 }
-body main .pItem:hover {
-  cursor: pointer;
-  opacity: 0.7;
-}
 body main .pItem img {
   width: 100%;
   display: block;
@@ -132,11 +131,17 @@ body > p a {
   letter-spacing: 1px;
   color: #7D7D7D;
 }
-body > p a:hover {
-  cursor: pointer;
-  color: black;
-}
 
+@media screen and (hover: hover) {
+  body main .pItem:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  body main > p a:hover {
+    cursor: pointer;
+    color: black;
+  }
+}
 @media screen and (max-width: 1260px) {
   body main {
     padding-top: 10px;

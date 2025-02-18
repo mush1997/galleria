@@ -16,11 +16,11 @@ body {
         display: none;
     }
 
-    header img {
-        &:hover {
-            cursor: pointer;
-        }
-    }
+    // header img {
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    // }
 
     main {
         padding-top: 100px;
@@ -63,10 +63,10 @@ body {
                             text-transform: uppercase;
                         }
 
-                        &:hover {
-                            cursor: pointer;
-                            background-color: rgba(255, 255, 255, 0.4);
-                        }
+                        // &:hover {
+                        //     cursor: pointer;
+                        //     background-color: rgba(255, 255, 255, 0.4);
+                        // }
                     }
                 }
 
@@ -134,10 +134,10 @@ body {
                     letter-spacing: 2px;
                     text-transform: uppercase;
 
-                    &:hover {
-                        cursor: pointer;
-                        color: $black;
-                    }
+                    // &:hover {
+                    //     cursor: pointer;
+                    //     color: $black;
+                    // }
                 }
             }
         }
@@ -191,23 +191,54 @@ body {
                     width: 24px;
                     height: 24px;
 
-                    &:hover {
-                        cursor: pointer;
-                        filter: invert(84%) sepia(0%) saturate(204%) hue-rotate(135deg) brightness(91%) contrast(82%);
-                    }
+                    // &:hover {
+                    //     cursor: pointer;
+                    //     filter: invert(84%) sepia(0%) saturate(204%) hue-rotate(135deg) brightness(91%) contrast(82%);
+                    // }
                 }
 
                 img.unclickable {
                     filter: invert(100%) sepia(3%) saturate(762%) hue-rotate(246deg) brightness(115%) contrast(91%);
 
-                    &:hover {
-                        cursor: not-allowed;
-                    }
+                    // &:hover {
+                    //     cursor: not-allowed;
+                    // }
                 }
 
                 #prevBtn {
                     margin-right: 24px;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (hover:hover) {
+    body {
+        header img:hover {
+            cursor: pointer;
+        }
+
+        main .container {
+            .pics .painting p:hover {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.4);
+            }
+
+            .text a:hover {
+                cursor: pointer;
+                color: $black;
+            }
+        }
+
+        .control .wrapper .panel {
+            img:hover {
+                cursor: pointer;
+                filter: invert(84%) sepia(0%) saturate(204%) hue-rotate(135deg) brightness(91%) contrast(82%);
+            }
+
+            img.unclickable:hover {
+                cursor: not-allowed;
             }
         }
     }

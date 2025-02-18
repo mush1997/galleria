@@ -24,10 +24,10 @@ body {
             width: 100%;
             position: relative;
 
-            &:hover {
-                cursor: pointer;
-                opacity: 0.7;
-            }
+            // &:hover {
+            //     cursor: pointer;
+            //     opacity: 0.7;
+            // }
 
             img {
                 width: 100%;
@@ -70,10 +70,24 @@ body {
             letter-spacing: 1px;
             color: $dark_gray;
 
-            &:hover {
-                cursor: pointer;
-                color: $black;
-            }
+            // &:hover {
+            //     cursor: pointer;
+            //     color: $black;
+            // }
+        }
+    }
+}
+
+@media screen and (hover:hover) {
+    body main {
+        .pItem:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        &>p a:hover {
+            cursor: pointer;
+            color: $black;
         }
     }
 }
