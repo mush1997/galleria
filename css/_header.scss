@@ -1,8 +1,7 @@
 @import "setting";
 
 body {
-    header {
-        border: 1px solid red;
+    header {        
         padding: 40px 0;
         width: 100%;
         display: flex;
@@ -24,11 +23,6 @@ body {
             text-align: right;
             text-transform: uppercase;
             text-decoration: none;
-
-            // &:hover {
-            //     cursor: pointer;
-            //     color: $black;
-            // }
         }
     }
 }

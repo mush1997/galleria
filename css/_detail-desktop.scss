@@ -16,12 +16,6 @@ body {
         display: none;
     }
 
-    // header img {
-    //     &:hover {
-    //         cursor: pointer;
-    //     }
-    // }
-
     main {
         padding-top: 100px;
         border-top: 2px solid $light_gray;
@@ -62,11 +56,6 @@ body {
                             letter-spacing: 2px;
                             text-transform: uppercase;
                         }
-
-                        // &:hover {
-                        //     cursor: pointer;
-                        //     background-color: rgba(255, 255, 255, 0.4);
-                        // }
                     }
                 }
 
@@ -133,11 +122,6 @@ body {
                     line-height: 12px;
                     letter-spacing: 2px;
                     text-transform: uppercase;
-
-                    // &:hover {
-                    //     cursor: pointer;
-                    //     color: $black;
-                    // }
                 }
             }
         }
@@ -190,19 +174,10 @@ body {
                 img {
                     width: 24px;
                     height: 24px;
-
-                    // &:hover {
-                    //     cursor: pointer;
-                    //     filter: invert(84%) sepia(0%) saturate(204%) hue-rotate(135deg) brightness(91%) contrast(82%);
-                    // }
                 }
 
                 img.unclickable {
                     filter: invert(100%) sepia(3%) saturate(762%) hue-rotate(246deg) brightness(115%) contrast(91%);
-
-                    // &:hover {
-                    //     cursor: not-allowed;
-                    // }
                 }
 
                 #prevBtn {

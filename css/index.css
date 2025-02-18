@@ -9,7 +9,6 @@
 }
 
 body header {
-  border: 1px solid red;
   padding: 40px 0;
   width: 100%;
   display: flex;
@@ -137,7 +136,7 @@ body > p a {
     cursor: pointer;
     opacity: 0.7;
   }
-  body main > p a:hover {
+  body > p a:hover {
     cursor: pointer;
     color: black;
   }
