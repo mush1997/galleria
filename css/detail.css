@@ -312,6 +312,7 @@ body .control .wrapper .panel #prevBtn {
 @media screen and (max-width: 1200px) {
   body main {
     padding-top: 60px;
+    min-height: auto;
   }
   body main .container {
     flex-wrap: wrap;
@@ -359,7 +360,6 @@ body .control .wrapper .panel #prevBtn {
   }
   body main {
     padding: 60px 40px 0 40px;
-    min-height: auto;
   }
   body .control {
     padding: 0 40px;

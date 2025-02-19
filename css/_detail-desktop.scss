@@ -233,7 +233,8 @@ body {
 @media screen and (max-width:1200px) {
     body {
         main {
-            padding-top: 60px;            
+            padding-top: 60px;  
+            min-height: auto;          
 
             .container {
                 flex-wrap: wrap;
