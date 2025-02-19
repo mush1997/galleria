@@ -19,6 +19,7 @@
 }
 
 body.shadow {
+    position: relative;
     overflow: hidden;
 
     &::before {

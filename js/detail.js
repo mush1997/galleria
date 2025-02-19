@@ -55,8 +55,7 @@ function renderModal() {
   modal.querySelector("img").alt = `${currentPainting.name}`;
 }
 
-function showModal() {
-  document.documentElement.overflow = "hidden";
+function showModal() {  
   document.body.classList.add("shadow");
   modal.classList.add("show");
 
@@ -71,8 +70,7 @@ function showModal() {
   document.addEventListener("keydown", prohibitTab);
 }
 
-function hideModal() {
-  document.documentElement.overflow = "visible";
+function hideModal() {  
   document.body.classList.remove("shadow");
   modal.classList.remove("show");
   document.removeEventListener("keydown", prohibitTab);
