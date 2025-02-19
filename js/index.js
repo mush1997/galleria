@@ -1,18 +1,7 @@
-(async function () {
-  let paintingData;
-  await fetch("data.json").then(response => response.json()).then(data => paintingData = data);
-
-  document.querySelectorAll(".pItem").forEach(painting => {
-    let paintingImg = painting.querySelector("img");
-    let paintingName = painting.querySelector(".pName").textContent;
-    let paintingDetail = paintingData.find(p => p.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "") === paintingName.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
-    paintingImg.src = `${paintingDetail.images.thumbnail}`;
-    paintingImg.alt = `${paintingName}`;
-    painting.addEventListener("click", showDetail);
-  });
-
+(function () {
   setLayout();
   window.addEventListener("resize", setLayout);
+  document.querySelectorAll(".pItem").forEach(painting => painting.addEventListener("click", showDetail));
 })();
 
 function showDetail(event) {
@@ -79,7 +68,7 @@ function mobileLayout() {
     let pItem = document.querySelector(`#p${i}`);
     document.querySelector("main").insertAdjacentElement("beforeend", pItem);
   }
-  
+
   document.querySelectorAll("section").forEach(section => section.remove());
 }
 
