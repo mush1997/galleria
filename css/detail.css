@@ -139,7 +139,7 @@ body::before {
 body main {
   padding-top: 100px;
   border-top: 2px solid #F3F3F3;
-  min-height: calc(100vh - 323px);
+  min-height: calc(100vh - 223px);
 }
 body main .container {
   display: flex;
