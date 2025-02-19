@@ -19,6 +19,7 @@ body {
     main {
         padding-top: 100px;
         border-top: 2px solid $light_gray;
+        min-height: calc(100vh - 323px);
 
         .container {
             display: flex;
@@ -232,7 +233,7 @@ body {
 @media screen and (max-width:1200px) {
     body {
         main {
-            padding-top: 60px;
+            padding-top: 60px;            
 
             .container {
                 flex-wrap: wrap;

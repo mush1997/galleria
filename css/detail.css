@@ -139,6 +139,7 @@ body::before {
 body main {
   padding-top: 100px;
   border-top: 2px solid #F3F3F3;
+  min-height: calc(100vh - 323px);
 }
 body main .container {
   display: flex;
@@ -358,6 +359,7 @@ body .control .wrapper .panel #prevBtn {
   }
   body main {
     padding: 60px 40px 0 40px;
+    min-height: auto;
   }
   body .control {
     padding: 0 40px;
