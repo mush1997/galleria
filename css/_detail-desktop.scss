@@ -131,6 +131,7 @@ body {
 
     .control {
         margin-top: 90px;
+        height: 95px;
 
         &::before {
             content: "";
@@ -286,5 +287,11 @@ body {
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width:1000px) {
+    body .control {
+        height: auto;
     }
 }
