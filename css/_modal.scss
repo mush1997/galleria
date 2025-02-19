@@ -18,7 +18,13 @@
     }
 }
 
+html.fixed {
+    height: 100%;
+    overflow: hidden;
+}
+
 body.shadow {
+    height: 100%;
     position: relative;
     overflow: hidden;
 
@@ -53,17 +59,17 @@ body {
             overflow: auto;
             overscroll-behavior: none;
 
-            &::-webkit-scrollbar {                
-                width: 6px;                
+            &::-webkit-scrollbar {
+                width: 6px;
             }
 
-            &::-webkit-scrollbar-track {  
-                margin-bottom: 4px;      
+            &::-webkit-scrollbar-track {
+                margin-bottom: 4px;
                 background: $medium_gray;
                 border-radius: 4px;
             }
 
-            &::-webkit-scrollbar-thumb {                
+            &::-webkit-scrollbar-thumb {
                 background: $dark_gray;
                 border-radius: 4px;
             }
@@ -88,19 +94,19 @@ body {
 }
 
 @media screen and (min-width:1400px) {
-    body #modal {        
+    body #modal {
         max-width: 800px;
     }
 }
 
 @media screen and (max-width:1000px) {
-    body #modal {        
+    body #modal {
         max-width: 650px;
     }
 }
 
 @media screen and (max-width:660px) {
     body #modal {
-        width: 85%;        
+        width: 85%;
     }
 }
