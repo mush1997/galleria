@@ -56,7 +56,7 @@ function renderModal() {
 }
 
 function showModal() {
-  document.documentElement.classList.add("fixed");
+  // document.documentElement.classList.add("fixed");
   document.body.classList.add("shadow");
   modal.classList.add("show");
 
@@ -72,7 +72,7 @@ function showModal() {
 }
 
 function hideModal() {
-  document.documentElement.classList.remove("fixed");
+  // document.documentElement.classList.remove("fixed");
   document.body.classList.remove("shadow");
   modal.classList.remove("show");
   document.removeEventListener("keydown", prohibitTab);
