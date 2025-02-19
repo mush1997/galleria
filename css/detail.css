@@ -79,48 +79,75 @@ body header a {
     opacity: 0.8;
   }
 }
+body.shadow {
+  overflow: hidden;
+}
 body.shadow::before {
   display: block;
   animation: shadow 0.4s forwards;
 }
 
-body main #modal {
+body #modal {
   width: 80%;
-  max-width: 900px;
+  max-width: 700px;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
   z-index: 15;
   display: none;
 }
-body main #modal div {
-  padding: 40px 0;
-}
-body main #modal div p {
-  margin-bottom: 40px;
+body #modal p {
+  margin-bottom: 20px;
   width: 100%;
+  height: 20px;
   text-align: right;
   font-size: 14px;
   color: white;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
-body main #modal div img {
+body #modal div {
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+  overscroll-behavior: none;
+}
+body #modal div::-webkit-scrollbar {
+  width: 6px;
+}
+body #modal div::-webkit-scrollbar-track {
+  margin-bottom: 4px;
+  background: #E5E5E5;
+  border-radius: 4px;
+}
+body #modal div::-webkit-scrollbar-thumb {
+  background: #7D7D7D;
+  border-radius: 4px;
+}
+body #modal div img {
   width: 100%;
 }
-body main #modal.show {
+body #modal.show {
   display: block;
   animation: gallery 0.8s forwards;
 }
 
 @media screen and (hover: hover) {
-  body main #modal div p:hover {
+  body #modal p:hover {
     cursor: pointer;
     color: #7D7D7D;
   }
 }
+@media screen and (min-width: 1400px) {
+  body #modal {
+    max-width: 800px;
+  }
+}
 @media screen and (max-width: 1000px) {
-  body main #modal {
+  body #modal {
+    max-width: 650px;
+  }
+}
+@media screen and (max-width: 660px) {
+  body #modal {
     width: 85%;
   }
 }

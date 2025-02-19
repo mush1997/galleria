@@ -19,6 +19,7 @@
 }
 
 body.shadow {
+    overflow: hidden;
 
     &::before {
         display: block;
@@ -27,55 +28,78 @@ body.shadow {
 }
 
 body {
-    main {
-        #modal {
-            width: 80%;
-            max-width: 900px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 15;
-            display: none;
+    #modal {
+        width: 80%;
+        max-width: 700px;
+        position: absolute;
+        left: 50%;
+        z-index: 15;
+        display: none;
 
-            div {
-                padding: 40px 0;
+        p {
+            margin-bottom: 20px;
+            width: 100%;
+            height: 20px;
+            text-align: right;
+            font-size: 14px;
+            color: $white;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
-                p {
-                    margin-bottom: 40px;
-                    width: 100%;
-                    text-align: right;
-                    font-size: 14px;
-                    color: $white;
-                    letter-spacing: 3px;
-                    text-transform: uppercase;
-                }
+        div {
+            max-height: calc(100vh - 120px);
+            overflow: auto;
+            overscroll-behavior: none;
 
-                img {
-                    width: 100%;
-                }
+            &::-webkit-scrollbar {                
+                width: 6px;                
+            }
+
+            &::-webkit-scrollbar-track {  
+                margin-bottom: 4px;      
+                background: $medium_gray;
+                border-radius: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb {                
+                background: $dark_gray;
+                border-radius: 4px;
+            }
+
+            img {
+                width: 100%;
             }
         }
+    }
 
-        #modal.show {
-            display: block;
-            animation: gallery 0.8s forwards;
-        }
+    #modal.show {
+        display: block;
+        animation: gallery 0.8s forwards;
     }
 }
 
 @media screen and (hover:hover) {
-    body main #modal div p:hover {
+    body #modal p:hover {
         cursor: pointer;
         color: $dark_gray;
     }
 }
 
+@media screen and (min-width:1400px) {
+    body #modal {        
+        max-width: 800px;
+    }
+}
+
 @media screen and (max-width:1000px) {
-    body {
-        main {
-            #modal {
-                width: 85%;
-            }
-        }
+    body #modal {        
+        max-width: 650px;
+    }
+}
+
+@media screen and (max-width:660px) {
+    body #modal {
+        width: 85%;        
     }
 }
