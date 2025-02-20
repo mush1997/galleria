@@ -79,11 +79,6 @@ body header a {
     opacity: 0.8;
   }
 }
-html.fixed {
-  height: 100%;
-  overflow: hidden;
-}
-
 body.shadow::before {
   display: block;
   animation: shadow 0.4s forwards;
