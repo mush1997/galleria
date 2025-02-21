@@ -94,21 +94,36 @@ body #modal {
   z-index: 15;
   display: none;
 }
-body #modal p {
+body #modal div:first-child {
   margin-bottom: 20px;
   width: 100%;
   height: 20px;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+body #modal div:first-child p {
+  margin-right: 4px;
+  padding: 2px 0;
+  height: 20px;
   font-size: 14px;
   color: white;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
 }
-body #modal div {
+body #modal div:first-child img {
+  padding: 3px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 4px;
+  filter: brightness(200%);
+}
+body #modal .frame {
   width: 100%;
   height: calc(100vh - 100px);
 }
-body #modal div img {
+body #modal .frame img {
   width: 100%;
   height: calc(100vh - 100px);
   -o-object-fit: scale-down;
@@ -120,24 +135,29 @@ body #modal.show {
 }
 
 @media screen and (hover: hover) {
-  body #modal p:hover {
+  body #modal div:first-child:hover {
     cursor: pointer;
+  }
+  body #modal div:first-child:hover p {
     color: #7D7D7D;
+  }
+  body #modal div:first-child:hover img {
+    filter: invert(51%) sepia(0%) saturate(111%) hue-rotate(155deg) brightness(95%) contrast(97%);
   }
 }
 @media screen and (min-width: 1400px) {
   body #modal {
     padding: 40px;
   }
-  body #modal div {
+  body #modal .frame {
     height: calc(100vh - 120px);
   }
-  body #modal div img {
+  body #modal .frame img {
     height: calc(100vh - 120px);
   }
 }
 @media screen and (max-width: 1000px) {
-  body #modal div img {
+  body #modal .frame img {
     -o-object-fit: contain;
        object-fit: contain;
   }
@@ -146,10 +166,10 @@ body #modal.show {
   body #modal {
     padding: 20px;
   }
-  body #modal div {
+  body #modal .frame {
     height: calc(100vh - 80px);
   }
-  body #modal div img {
+  body #modal .frame img {
     height: calc(100vh - 80px);
   }
 }

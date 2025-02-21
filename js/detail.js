@@ -51,8 +51,8 @@ function renderDetail(currentPainting, heroPicSize) {
 }
 
 function renderModal() {
-  modal.querySelector("img").src = `${currentPainting.images.gallery}`;
-  modal.querySelector("img").alt = `${currentPainting.name}`;
+  document.getElementById("galleryPic").src = `${currentPainting.images.gallery}`;
+  document.getElementById("galleryPic").alt = `${currentPainting.name}`;
 }
 
 function showModal() {

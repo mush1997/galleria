@@ -36,18 +36,35 @@ body {
         z-index: 15;
         display: none;
 
-        p {
+        div:first-child {
             margin-bottom: 20px;
             width: 100%;
             height: 20px;
-            text-align: right;
-            font-size: 14px;
-            color: $white;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            p {
+                margin-right: 4px;
+                padding: 2px 0;
+                height: 20px;
+                font-size: 14px;
+                color: $white;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+            }
+
+            img {
+                padding: 3px;
+                width: 20px;
+                height: 20px;
+                border: 1px solid $white;
+                border-radius: 4px;
+                filter: brightness(200%);
+            }
         }
 
-        div {
+        .frame {
             width: 100%;
             height: calc(100vh - 100px);
 
@@ -66,9 +83,16 @@ body {
 }
 
 @media screen and (hover:hover) {
-    body #modal p:hover {
+    body #modal div:first-child:hover {
         cursor: pointer;
-        color: $dark_gray;
+
+        p {
+            color: $dark_gray;
+        }
+
+        img {
+            filter: invert(51%) sepia(0%) saturate(111%) hue-rotate(155deg) brightness(95%) contrast(97%);
+        }
     }
 }
 
@@ -76,7 +100,7 @@ body {
     body #modal {
         padding: 40px;
 
-        div {
+        .frame {
             height: calc(100vh - 120px);
 
             img {
@@ -87,7 +111,7 @@ body {
 }
 
 @media screen and (max-width:1000px) {
-    body #modal div img {
+    body #modal .frame img {
         object-fit: contain;
     }
 }
@@ -96,7 +120,7 @@ body {
     body #modal {
         padding: 20px;
 
-        div {
+        .frame {
             height: calc(100vh - 80px);
 
             img {
