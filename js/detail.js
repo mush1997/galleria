@@ -58,15 +58,7 @@ function renderModal() {
 function showModal() {
   document.body.classList.add("shadow");
   modal.classList.add("show");
-
-  if ((modal.clientHeight + 80) === window.innerHeight) {
-    modal.style.top = (window.scrollY + 40) + "px";
-    modal.style.transform = "translateX(-50%)";
-  } else {
-    modal.style.top = `calc(50% + ${window.scrollY}px)`;
-    modal.style.transform = "translate(-50%, -50%)";
-  }
-
+  modal.style.top = `${window.scrollY}px`;
   document.addEventListener("keydown", prohibitTab);
 }
 
@@ -77,7 +69,6 @@ function hideModal() {
 }
 
 function prohibitTab(event) {
-  console.log(event.key);
   event.key === "Tab" ? event.preventDefault() : "";
 }
 

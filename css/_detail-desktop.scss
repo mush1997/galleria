@@ -7,6 +7,7 @@ body {
     &::before {
         content: "";
         width: 100%;
+        height: 100vh;
         background-color: black;
         position: fixed;
         left: 0;
@@ -234,8 +235,8 @@ body {
 @media screen and (max-width:1200px) {
     body {
         main {
-            padding-top: 60px;  
-            min-height: auto;          
+            padding-top: 60px;
+            min-height: auto;
 
             .container {
                 flex-wrap: wrap;
@@ -287,11 +288,5 @@ body {
                 }
             }
         }
-    }
-}
-
-@media screen and (max-width:1000px) {
-    body .control {
-        height: auto;
     }
 }
