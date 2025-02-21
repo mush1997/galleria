@@ -6,7 +6,7 @@ let heroPicSize;
 
 const modal = document.getElementById("modal");
 const showModalBtn = document.querySelector(".painting p");
-const closeModalBtn = document.querySelector("#modal p");
+const closeModalBtn = document.querySelector("#modal div");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
