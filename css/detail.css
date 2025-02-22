@@ -145,17 +145,6 @@ body #modal.show {
     filter: invert(51%) sepia(0%) saturate(111%) hue-rotate(155deg) brightness(95%) contrast(97%);
   }
 }
-@media screen and (min-width: 1400px) {
-  body #modal {
-    padding: 60px 40px;
-  }
-  body #modal .frame {
-    height: calc(100vh - 180px);
-  }
-  body #modal .frame img {
-    height: calc(100vh - 180px);
-  }
-}
 @media screen and (max-width: 1000px) {
   body #modal .frame img {
     -o-object-fit: contain;

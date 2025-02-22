@@ -96,20 +96,6 @@ body {
     }
 }
 
-@media screen and (min-width:1400px) {
-    body #modal {
-        padding: 60px 40px;
-
-        .frame {
-            height: calc(100vh - 180px);
-
-            img {
-                height: calc(100vh - 180px);
-            }
-        }
-    }
-}
-
 @media screen and (max-width:1000px) {
     body #modal .frame img {
         object-fit: contain;
