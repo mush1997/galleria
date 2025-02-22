@@ -156,10 +156,10 @@ body #modal.show {
     padding: 32px 24px;
   }
   body #modal .frame {
-    height: calc(100vh - 124px);
+    height: calc(100vh - 104px);
   }
   body #modal .frame img {
-    height: calc(100vh - 124px);
+    height: calc(100vh - 104px);
   }
 }
 body {
