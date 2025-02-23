@@ -26,8 +26,13 @@ const nextBtn = document.getElementById("nextBtn");
 })();
 
 function setHeroPicSize() {
-  window.innerWidth > 660 ? heroPicSize = "large" : heroPicSize = "small";
-  renderDetail(currentPainting, heroPicSize);
+  let newHeroPicSize;
+  window.innerWidth > 660 ? newHeroPicSize = "large" : newHeroPicSize = "small";
+
+  if (newHeroPicSize !== heroPicSize) {
+    heroPicSize = newHeroPicSize;
+    renderDetail(currentPainting, heroPicSize);
+  }
 }
 
 function renderDetail(currentPainting, heroPicSize) {
