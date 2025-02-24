@@ -110,7 +110,8 @@ function switchPainting(event) {
   direction === "prev" ? currentPainting = paintingData[index - 1] : currentPainting = paintingData[index + 1];
   direction === "prev" ? index-- : index++;
   renderDetail(currentPainting, heroPicSize);
-  window.scrollTo(document.querySelector("main").offsetTop, 0);
+  setTimeout(() => { window.scrollTo(document.querySelector("main").offsetTop, 0) }, 400);
+  // window.scrollTo(document.querySelector("main").offsetTop, 0);
   window.history.replaceState(null, "", `./detail.html?painting=${painting}`);
 }
 
