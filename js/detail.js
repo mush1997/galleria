@@ -1,6 +1,6 @@
 let paintingData;
 let currentPainting;
-let index = 0;
+let index;
 let painting = window.location.search.replaceAll("_", " ").slice(10);
 let heroPicSize;
 
@@ -23,6 +23,10 @@ const nextBtn = document.getElementById("nextBtn");
 
   window.addEventListener("resize", setHeroPicSize);
   document.querySelector("header img").addEventListener("click", () => { window.location.href = "./index.html" });
+  showModalBtn.addEventListener("click", showModal);
+  closeModalBtn.addEventListener("click", hideModal);
+  prevBtn.addEventListener("click", switchPainting);
+  nextBtn.addEventListener("click", switchPainting);
 })();
 
 function setHeroPicSize() {
@@ -31,28 +35,30 @@ function setHeroPicSize() {
 
   if (newHeroPicSize !== heroPicSize) {
     heroPicSize = newHeroPicSize;
-    renderDetail(currentPainting, heroPicSize);
+    renderDetail();
   }
 }
 
-async function renderDetail(currentPainting, heroPicSize) {
-  let paintingImg = document.querySelector(".painting img");
-  let artistImg = document.querySelector(".artist img");
-
-  paintingImg.src = `${currentPainting.images.hero[heroPicSize]}`;
-  paintingImg.alt = `${currentPainting.name}`;
-  artistImg.src = `${currentPainting.artist.image}`;
-  artistImg.alt = `${currentPainting.artist.name}`;
-
+async function renderDetail() {
+  await renderPics();
   document.querySelector(".title h1").textContent = `${currentPainting.name}`;
   document.querySelector(".title p").textContent = `${currentPainting.artist.name}`;
   document.querySelector(".year").textContent = `${currentPainting.year}`;
   document.querySelector(".description").textContent = `${currentPainting.description}`;
   document.querySelector(".text a").href = `${currentPainting.source}`;
 
-  painting = currentPainting.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(" ", "_");
   renderModal();
   renderControl();
+  painting = currentPainting.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(" ", "_");
+}
+
+async function renderPics() {
+  let paintingImg = document.querySelector(".painting img");
+  let artistImg = document.querySelector(".artist img");
+  paintingImg.src = `${currentPainting.images.hero[heroPicSize]}`;
+  artistImg.src = `${currentPainting.artist.image}`;
+  paintingImg.alt = `${currentPainting.name}`;
+  artistImg.alt = `${currentPainting.artist.name}`;
 }
 
 function renderModal() {
@@ -110,12 +116,8 @@ function switchPainting(event) {
   direction === "prev" ? currentPainting = paintingData[index - 1] : currentPainting = paintingData[index + 1];
   direction === "prev" ? index-- : index++;
 
-  let promise = renderDetail(currentPainting, heroPicSize);
-  promise.then(() => { window.scrollTo(document.querySelector("main").offsetTop, 0) });
-  window.history.replaceState(null, "", `./detail.html?painting=${painting}`);
+  renderDetail().then(() => {
+    window.scrollTo(document.querySelector("main").offsetTop, 0);
+    window.history.replaceState(null, "", `./detail.html?painting=${painting}`);
+  });
 }
-
-showModalBtn.addEventListener("click", showModal);
-closeModalBtn.addEventListener("click", hideModal);
-prevBtn.addEventListener("click", switchPainting);
-nextBtn.addEventListener("click", switchPainting);
