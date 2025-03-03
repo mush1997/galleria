@@ -35,7 +35,7 @@ function setHeroPicSize() {
   }
 }
 
-function renderDetail(currentPainting, heroPicSize) {
+async function renderDetail(currentPainting, heroPicSize) {
   let paintingImg = document.querySelector(".painting img");
   let artistImg = document.querySelector(".artist img");
 
@@ -109,8 +109,9 @@ function switchPainting(event) {
 
   direction === "prev" ? currentPainting = paintingData[index - 1] : currentPainting = paintingData[index + 1];
   direction === "prev" ? index-- : index++;
-  renderDetail(currentPainting, heroPicSize);
-  window.scrollTo(document.querySelector("main").offsetTop, 0);
+
+  let promise = renderDetail(currentPainting, heroPicSize);
+  promise.then(() => { window.scrollTo(document.querySelector("main").offsetTop, 0) });
   window.history.replaceState(null, "", `./detail.html?painting=${painting}`);
 }
 
