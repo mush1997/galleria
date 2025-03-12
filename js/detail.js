@@ -1,18 +1,18 @@
 let paintingData;
 let currentPainting;
 let index;
-let painting = window.location.search.replaceAll("_", " ").slice(10);
+let painting = window.location.search.slice(10).replaceAll("_", " ");
 let heroPicSize;
 
-const modal = document.getElementById("modal");
 const showModalBtn = document.querySelector(".painting p");
 const closeModalBtn = document.querySelector("#modal div");
+const modal = document.getElementById("modal");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
 (async function () {
   await fetch("data.json").then(response => response.json()).then(data => paintingData = data);
-  index = paintingData.findIndex((data) => data.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "") === painting);
+  index = paintingData.findIndex(data => data.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "") === painting);
 
   if (index < 0) {
     window.location.href = "./index.html";
@@ -66,6 +66,18 @@ function renderModal() {
   document.getElementById("galleryPic").alt = `${currentPainting.name}`;
 }
 
+function renderControl() {
+  document.querySelector(".progressBar").style.width = `${100 / paintingData.length * (index + 1)}%`;
+  document.querySelector(".smallTitle h2").textContent = `${currentPainting.name}`;
+  document.querySelector(".smallTitle p").textContent = `${currentPainting.artist.name}`;
+
+  if (index === 0) {
+    prevBtn.classList.add("unclickable");
+  } else if (index === paintingData.length - 1) {
+    nextBtn.classList.add("unclickable");
+  }
+}
+
 function showModal() {
   document.body.classList.add("shadow");
   modal.classList.add("show");
@@ -83,38 +95,24 @@ function prohibitTab(event) {
   event.key === "Tab" ? event.preventDefault() : "";
 }
 
-function renderControl() {
-  document.querySelector(".progressBar").style.width = `${100 / paintingData.length * (index + 1)}%`;
-  document.querySelector(".smallTitle h2").textContent = `${currentPainting.name}`;
-  document.querySelector(".smallTitle p").textContent = `${currentPainting.artist.name}`;
-
-  if (index === 0) {
-    prevBtn.classList.add("unclickable");
-  } else if (index === paintingData.length - 1) {
-    nextBtn.classList.add("unclickable");
-  }
-}
-
 function switchPainting(event) {
   let direction;
-  event.currentTarget.id === "prevBtn" ? direction = "prev" : direction = "next";
+  event.target.id === "prevBtn" ? direction = "prev" : direction = "next";
 
-  if ((direction === "prev" && index === 0) || (direction === "next" && index === paintingData.length - 1)) {
-    renderControl();
-    return;
-  }
+  if ((direction === "prev" && index === 0) || (direction === "next" && index === paintingData.length - 1)) { return; }
 
-  if (direction === "prev" && index === 1) {
-    prevBtn.classList.add("unclickable");
-  } else if (direction === "next" && index === paintingData.length - 2) {
-    nextBtn.classList.add("unclickable");
+  prevBtn.classList.remove("unclickable");
+  nextBtn.classList.remove("unclickable");
+
+  if (direction === "prev") {
+    index === 1 ? prevBtn.classList.add("unclickable") : "";
+    currentPainting = paintingData[index - 1];
+    index--;
   } else {
-    prevBtn.classList.remove("unclickable");
-    nextBtn.classList.remove("unclickable");
+    index === paintingData.length - 2 ? nextBtn.classList.add("unclickable") : "";
+    currentPainting = paintingData[index + 1];
+    index++;
   }
-
-  direction === "prev" ? currentPainting = paintingData[index - 1] : currentPainting = paintingData[index + 1];
-  direction === "prev" ? index-- : index++;
 
   renderDetail().then(() => {
     window.scrollTo(document.querySelector("main").offsetTop, 0);

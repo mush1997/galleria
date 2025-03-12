@@ -4,9 +4,14 @@
   document.querySelectorAll(".pItem").forEach(painting => painting.addEventListener("click", showDetail));
 })();
 
-function showDetail(event) {
-  let paintingName = event.currentTarget.querySelector(".pName").textContent.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  window.location.href = `./detail.html?painting=${paintingName.replaceAll(" ", "_")}`;
+function setLayout() {
+  if (window.innerWidth > 1000) {
+    desktopLayout();
+  } else if (window.innerWidth > 500) {
+    tabletLayout();
+  } else {
+    mobileLayout();
+  }
 }
 
 function insertSection(num) {
@@ -23,9 +28,9 @@ function movePItems(pItems, i) {
 }
 
 function desktopLayout() {
-  if (document.querySelector("#c3")) {
-    return;
-  } else if (document.querySelector("#c1")) {
+  if (document.querySelector("#c3")) { return; }
+
+  if (document.querySelector("#c1")) {
     for (let i = 1; i <= 4; i++) {
       let pItems = document.querySelectorAll(`.col${i}`);
       i >= 3 ? insertSection(i) : "";
@@ -51,9 +56,9 @@ function tabletLayout() {
     document.querySelector("#c3").remove();
     document.querySelector("#c4").remove();
     return;
-  } else if (document.querySelector("#c1")) {
-    return;
   }
+
+  if (document.querySelector("#c1")) { return; }
 
   insertSection(1);
   insertSection(2);
@@ -72,12 +77,7 @@ function mobileLayout() {
   document.querySelectorAll("section").forEach(section => section.remove());
 }
 
-function setLayout() {
-  if (window.innerWidth > 1000) {
-    desktopLayout();
-  } else if (window.innerWidth > 500) {
-    tabletLayout();
-  } else {
-    mobileLayout();
-  }
+function showDetail(event) {
+  let paintingName = event.currentTarget.querySelector(".pName").textContent.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  window.location.href = `./detail.html?painting=${paintingName.replaceAll(" ", "_")}`;
 }

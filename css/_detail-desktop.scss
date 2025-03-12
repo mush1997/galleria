@@ -1,6 +1,3 @@
-@import "header";
-@import "modal";
-
 body {
     padding: 0 40px;
 
@@ -218,6 +215,7 @@ body {
 
             img.unclickable:hover {
                 cursor: not-allowed;
+                filter: invert(100%) sepia(3%) saturate(762%) hue-rotate(246deg) brightness(115%) contrast(91%);
             }
         }
     }

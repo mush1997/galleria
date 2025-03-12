@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -338,6 +339,7 @@ body .control .wrapper .panel #prevBtn {
   }
   body .control .wrapper .panel img.unclickable:hover {
     cursor: not-allowed;
+    filter: invert(100%) sepia(3%) saturate(762%) hue-rotate(246deg) brightness(115%) contrast(91%);
   }
 }
 @media screen and (min-width: 1400px) {
