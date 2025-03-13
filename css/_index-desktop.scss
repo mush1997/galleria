@@ -4,11 +4,9 @@ body {
     main {
         width: 100%;
         border-top: 2px solid $light_gray;
-
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        column-gap: 40px;
-        position: relative;
+        column-gap: 30px;
 
         .col {
             display: flex;
@@ -17,7 +15,7 @@ body {
         }
 
         .pItem {
-            margin-top: 40px;
+            margin-top: 30px;
             width: 100%;
             position: relative;
 
@@ -27,18 +25,17 @@ body {
             }
 
             div {
-                padding: 40px;
+                padding: 24px;
                 width: 100%;
                 background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.84) 100%);
                 position: absolute;
                 bottom: 0;
-                z-index: 5;
 
                 .pName {
                     margin-bottom: 6px;
-                    font-size: 24px;
+                    font-size: 20px;
                     color: $white;
-                    line-height: 29px;
+                    line-height: 26px;
                 }
 
                 .pAuthor {
@@ -79,21 +76,20 @@ body {
     }
 }
 
-@media screen and (max-width:1260px) {
+@media screen and (min-width:1260px) {
     body {
         main {
-            padding-top: 10px;
-            column-gap: 30px;
+            column-gap: 40px;
 
             .pItem {
-                margin-top: 30px;
+                margin-top: 40px;
 
                 div {
-                    padding: 24px;
+                    padding: 40px;
 
                     .pName {
-                        font-size: 20px;
-                        line-height: 26px;
+                        font-size: 24px;
+                        line-height: 29px;
                     }
                 }
             }

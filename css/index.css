@@ -28,7 +28,6 @@ body header a {
   color: #7D7D7D;
   line-height: 15px;
   letter-spacing: 2.5px;
-  text-align: right;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -84,9 +83,8 @@ body main {
   border-top: 2px solid #F3F3F3;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  -moz-column-gap: 40px;
-       column-gap: 40px;
-  position: relative;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 body main .col {
   display: flex;
@@ -94,7 +92,7 @@ body main .col {
   justify-content: space-between;
 }
 body main .pItem {
-  margin-top: 40px;
+  margin-top: 30px;
   width: 100%;
   position: relative;
 }
@@ -103,18 +101,17 @@ body main .pItem img {
   display: block;
 }
 body main .pItem div {
-  padding: 40px;
+  padding: 24px;
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.84) 100%);
   position: absolute;
   bottom: 0;
-  z-index: 5;
 }
 body main .pItem div .pName {
   margin-bottom: 6px;
-  font-size: 24px;
+  font-size: 20px;
   color: white;
-  line-height: 29px;
+  line-height: 26px;
 }
 body main .pItem div .pAuthor {
   font-size: 13px;
@@ -144,24 +141,22 @@ body > p a {
     color: black;
   }
 }
-@media screen and (max-width: 1260px) {
+@media screen and (min-width: 1260px) {
   body main {
-    padding-top: 10px;
-    -moz-column-gap: 30px;
-         column-gap: 30px;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
   }
   body main .pItem {
-    margin-top: 30px;
+    margin-top: 40px;
   }
   body main .pItem div {
-    padding: 24px;
+    padding: 40px;
   }
   body main .pItem div .pName {
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 24px;
+    line-height: 29px;
   }
 }
-/* tablet */
 @media screen and (max-width: 1000px) {
   body {
     padding: 0;
@@ -178,9 +173,6 @@ body > p a {
   }
   body main .pItem div {
     width: calc(100% - 24px);
-  }
-  body main #p14 {
-    order: 1;
   }
   body > p {
     padding-right: 52px;
@@ -216,7 +208,6 @@ body > p a {
     padding-right: 30px;
   }
 }
-/* phone */
 @media screen and (max-width: 500px) {
   body main {
     display: flex;
@@ -230,9 +221,6 @@ body > p a {
   }
   body main .pItem div {
     width: calc(100% - 32px);
-  }
-  body main #p14 {
-    order: 0;
   }
   body > p {
     padding-right: 46px;

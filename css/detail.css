@@ -28,7 +28,6 @@ body header a {
   color: #7D7D7D;
   line-height: 15px;
   letter-spacing: 2.5px;
-  text-align: right;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -191,12 +190,13 @@ body main .container .pics {
 body main .container .pics .painting {
   position: relative;
 }
-body main .container .pics .painting img {
+body main .container .pics .painting > img {
   width: 63%;
   vertical-align: middle;
 }
 body main .container .pics .painting p {
   background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgb(68, 68, 68);
   padding: 10px 12px;
   position: absolute;
   left: 16px;
@@ -328,6 +328,7 @@ body .control .wrapper .panel #prevBtn {
   body main .container .pics .painting p:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.4);
+    border: none;
   }
   body main .container .text a:hover {
     cursor: pointer;
@@ -362,11 +363,11 @@ body .control .wrapper .panel #prevBtn {
   body main .container .pics {
     flex-basis: 100%;
   }
-  body main .container .pics .painting img {
+  body main .container .pics .painting > img {
     width: 68%;
   }
   body main .container .pics .title {
-    padding: 0 0 60px 60px;
+    padding-right: 0;
     width: 66%;
   }
   body main .container .pics .title h1 {
@@ -394,7 +395,6 @@ body .control .wrapper .panel #prevBtn {
     margin-left: 15%;
   }
 }
-/* tablet */
 @media screen and (max-width: 1000px) {
   body {
     padding: 0;
@@ -416,7 +416,7 @@ body .control .wrapper .panel #prevBtn {
   }
 }
 @media screen and (max-width: 660px) {
-  body main .container .pics .painting img {
+  body main .container .pics .painting > img {
     width: 100%;
   }
   body main .container .pics .painting p {
@@ -440,6 +440,7 @@ body .control .wrapper .panel #prevBtn {
   body main .container .pics .artist {
     left: 16px;
     top: calc(100% + 30px);
+    bottom: auto;
   }
   body main .container .text {
     margin-top: 200px;
@@ -460,7 +461,6 @@ body .control .wrapper .panel #prevBtn {
     margin-left: 10%;
   }
 }
-/* phone */
 @media screen and (max-width: 560px) {
   body main {
     padding: 40px 24px 0 24px;
