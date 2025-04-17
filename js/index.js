@@ -14,16 +14,15 @@ function setLayout() {
   }
 }
 
-function insertSection(num) {
+function insertSection(columnNum) {
   let section = document.createElement("section");
-  section.id = `c${num}`;
-  section.classList.add("col");
+  section.id = `c${columnNum}`;
   document.querySelector("main").insertAdjacentElement("beforeend", section);
 }
 
-function movePItems(pItems, i) {
-  for (let j = 0; j < pItems.length; j++) {
-    document.querySelector(`#c${i}`).insertAdjacentElement("beforeend", pItems[j]);
+function movePItems(pItems, columnNum) {
+  for (let i = 0; i < pItems.length; i++) {
+    document.querySelector(`#c${columnNum}`).insertAdjacentElement("beforeend", pItems[i]);
   }
 }
 

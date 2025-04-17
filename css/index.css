@@ -86,7 +86,7 @@ body main {
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
-body main .col {
+body main section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
