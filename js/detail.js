@@ -4,8 +4,6 @@ let index;
 let painting = window.location.search.slice(10).replaceAll("_", " ");
 let heroPicSize;
 
-const showModalBtn = document.querySelector(".painting p");
-const closeModalBtn = document.querySelector("#modal div");
 const modal = document.getElementById("modal");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -14,7 +12,7 @@ const nextBtn = document.getElementById("nextBtn");
   await fetch("data.json").then(response => response.json()).then(data => paintingData = data);
   index = paintingData.findIndex(data => data.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "") === painting);
 
-  if (index < 0) {
+  if (index === -1) {
     window.location.href = "./index.html";
   } else {
     currentPainting = paintingData[index];
@@ -23,8 +21,8 @@ const nextBtn = document.getElementById("nextBtn");
 
   window.addEventListener("resize", setHeroPicSize);
   document.querySelector("header img").addEventListener("click", () => { window.location.href = "./index.html" });
-  showModalBtn.addEventListener("click", showModal);
-  closeModalBtn.addEventListener("click", hideModal);
+  document.querySelector(".painting p").addEventListener("click", showModal);
+  document.querySelector("#modal div").addEventListener("click", hideModal);
   prevBtn.addEventListener("click", switchPainting);
   nextBtn.addEventListener("click", switchPainting);
 })();
@@ -46,10 +44,8 @@ async function renderDetail() {
   document.querySelector(".year").textContent = `${currentPainting.year}`;
   document.querySelector(".description").textContent = `${currentPainting.description}`;
   document.querySelector(".text a").href = `${currentPainting.source}`;
-
   renderModal();
   renderControl();
-  painting = currentPainting.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(" ", "_");
 }
 
 async function renderPics() {
@@ -98,7 +94,6 @@ function prohibitTab(event) {
 function switchPainting(event) {
   let direction;
   event.target.id === "prevBtn" ? direction = "prev" : direction = "next";
-
   if ((direction === "prev" && index === 0) || (direction === "next" && index === paintingData.length - 1)) { return; }
 
   prevBtn.classList.remove("unclickable");
@@ -115,7 +110,7 @@ function switchPainting(event) {
   }
 
   renderDetail().then(() => {
-    window.scrollTo(document.querySelector("main").offsetTop, 0);
-    window.history.replaceState(null, "", `./detail.html?painting=${painting}`);
+    window.scrollTo(0, document.querySelector("main").offsetTop);
+    window.history.replaceState(null, "", `./detail.html?painting=${currentPainting.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(" ", "_")}`);
   });
 }
